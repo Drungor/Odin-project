@@ -11,30 +11,92 @@
 </head>
 <body>
     <header>
-        <div>
-            <h2>Header Logo</h2>
-            <nav>
-                <a href="">header link one</a>
-                <a href="">header link two</a>
-                <a href="">header link three</a>
-            </nav>
-        </div>
+            <div id="logo">
+                <h2><a href="index.html">Bali lodge</a></h2>
+            </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">The place</a>
+                        </li>
+                        <li>
+                            <a href="">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
     </header>
     <main>
         <section id="hero">
-            <div>
+            <div id="text">
                 <h1>
-                    This website is awesome
+                    Find your dream place in Ubud
                 </h1>
                 <p>
                     This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast.
                 </p>
-                <button ></button>
+                <button type="button" onclick="window.location.href='https://www.theodinproject.com/'" >Check availibility</button>
+            </div>
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1709166797215-9092d6e4e21c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="swimming pool and palm trees">
             </div>
         </section>
-        <section id="information"></section>
-        <section id="quote"></section>
-        <section id="call-to-action"></section>
+        <section id="information">
+            <h2>More about the lodge</h2>
+            <div id="wrapper">
+                <div class="bloc">
+                    <img src="https://images.unsplash.com/photo-1727359224979-cd481518ee51?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="hosue next top the sea">
+                    <p>
+                    Right in front of the sea
+                    </p>
+                </div>
+                <div class="bloc">
+                    <img src="https://images.unsplash.com/photo-1619178697323-1296a375922d?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="road">
+                    <p>
+                    5 minutes away by walk from the city center
+                    </p>
+                </div>
+                <div class="bloc">
+                    <img src="https://images.unsplash.com/photo-1619178697027-01b7455ce24e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="rice field">
+                    <p>
+                    Surrounded by rice fields
+                    </p>
+                </div>
+                <div class="bloc">
+                    <img src="https://images.unsplash.com/photo-1622336707729-8fec35fb0524?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="seaside">
+                    <p>
+                    private beach just for our customers
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="quote">
+            <div>
+                <p>This is my third time in this area, 
+                    I was looking for a place different, 
+                    and a little more outside of the city, 
+                    to be able to deep inside the nature and 
+                    feel the calm of Bali. I think I found 
+                    the perfect place.
+                </p>
+                <p id="author">
+                    -Thor, God of Thunder
+                </p>
+            </div>
+        </section>
+        <section class="cta">
+            <div class="container-cta">
+                <div id="text-cta">
+                    <h3>Call to action! It's time!</h3>
+                    <p>sign up for our product by cliking that button right over there</p>
+                </div>
+                <div>
+                    <button type="button" onclick="window.location.href='https://www.theodinproject.com/'" >Sign up</button>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <p>Copyright © the Odin Project 2021, realised by Leopold Maitre. </p>
