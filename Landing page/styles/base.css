@@ -1,8 +1,29 @@
 :root {
-    
+    --font-family: 'Roboto', sans-serif;
+    --font-size-500: 1rem;
+
+    --font-color-nav: #e5e7eb;
+    --font-color-header: #f9faf8;
+    --font-color-btn: #3882F8;
+    --font-color-btn-alt: white;
+    --font-color-dark-background: #1f2937;
+    --font-color-quote-text: #1f2937;
 }
 
 
 body {
+    font-family: var(--font-family);
+}
+
+header{
 
 }
+
+nav{
+
+}
+
+#hero {
+
+}
+
