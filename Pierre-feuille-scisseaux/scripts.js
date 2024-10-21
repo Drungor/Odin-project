@@ -19,9 +19,16 @@
 
 // const computerChoice = getComputerChoice("pierre", "feuille", "ciseaux");
 
-let computerChoice = getComputerChoice();
+const computerChoice = getComputerChoice();
+const humanChoice = getHumanChoice();
 
-function getComputerChoice () {
+
+function playGame () {
+    let computerScore = 0;
+    let humanScore = 0;
+
+
+    function getComputerChoice () {
     let resultMathRandom = Math.random();
     if (resultMathRandom <= 0.33) {
         resultMathRandom = "石";
@@ -31,10 +38,39 @@ function getComputerChoice () {
         resultMathRandom = "鋏";
     }
     return resultMathRandom;
-}
+    }
 
-console.log(computerChoice);
+    let humanChoice = getHumanChoice();
 
-function getHumanChoice () {
+    function getHumanChoice () {
     let humanChoice = prompt("石、紙、鋏を選んでください");
+    return humanChoice;
+    }
+
+    function playRound (humanChoice, computerChoice) {
+    let a = humanChoice;
+    let b = computerChoice;
+
+    if (a === b) {
+        return "引き分け";
+    } else if (a === "石" && b === "紙" || a === "紙" && b === "鋏" || a === "鋏" && b === "石") {
+        return "あなたの負け";
+    } else if (a === "紙" && b === "石" || a === "鋏" && b === "紙" || a === "石" && b === "鋏") {
+        return ("あなたの勝ち");
+    } else {
+        return "不正な入力です";
+    }
+
+
+    function updateScore (result) {
+        if (result === "あなたの勝ち") {
+            humanScore++;
+        }  else if (result === "あなたの負け") {
+            computerScore++;
+        } else {
+            return "引き分け";
+        }
+        console.log(humanScore, computerScore)
+    }
+
 }
