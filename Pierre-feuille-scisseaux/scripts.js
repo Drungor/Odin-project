@@ -47,7 +47,6 @@ function playGame () {
         const humanChoice = getHumanChoice();
         let resultat = playRound(humanChoice, computerChoice);
         updateScore(resultat);
-        round++;
     }
     
     if (humanScore > computerScore) {
