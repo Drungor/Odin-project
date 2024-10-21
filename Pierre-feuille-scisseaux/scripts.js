@@ -7,21 +7,6 @@
 // je dois aussi afficher le score
 // je dois a la fin des 5 rounds afficher le gagnant
 
-// probleme : je ne sais pas comment faire pour creer les fonctions pour permettre a la machine de choisir entre pierre feuille et cissaux 
-// je n ai aucune idee de comment faire pour faire le score et comment dans la console pour stocker le score etc
-
-// pour commencer je vais creer la partie reserver a l ordinateur pour comprendre comment ca marche.
-// dans ma fonction getComputerChoice dois il y avaoir un paramater ou pas ?
-
-//quands je resoue un probleme je dois penser a ce que j ai appris. 
-// ici il est fort probable que le resultat de math.random doivent etre utiliser dans une fonction if else pour extraire le resultat et lui attribuer une value
-
-
-// const computerChoice = getComputerChoice("pierre", "feuille", "ciseaux");
-
-
-
-
 // variables
 
 const computerChoice = getComputerChoice();
@@ -49,7 +34,17 @@ let humanChoice = prompt("石、紙、鋏を選んでください");
 return humanChoice;
 }
 
-function round (humanChoice, computerChoice) {
+function UpdateScore (resultat) {
+    if (resultat === "あなたの勝ち") {
+        humanScore++;
+    } else if (resultat === "あなたの負け") {
+        computerScore++;
+    }
+}
+
+
+
+function playRound (humanChoice, computerChoice) {
     let a = humanChoice;
     let b = computerChoice;
 
@@ -59,10 +54,17 @@ function round (humanChoice, computerChoice) {
         return "あなたの負け";
     } else { return "あなたの勝ち";
     }
-
 }
 
+playRound(humanChoice, computerChoice);
 
+function fullGame (score) {
+    if (score === 5) {
+        if (humanScore > computerScore) {
+            return "You won the game!";
+        } else if (humanScore < computerScore) {
+            return "You lost the game!";
+        }
+    }
+}
 
-
-// console.log ("あなたのスコアは" + humanScore + "です");
