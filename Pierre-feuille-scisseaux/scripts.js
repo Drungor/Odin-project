@@ -24,14 +24,17 @@ let computerChoice = getComputerChoice();
 function getComputerChoice () {
     let resultMathRandom = Math.random();
     if (resultMathRandom <= 0.33) {
-        resultMathRandom = "pierre";
+        resultMathRandom = "石";
     } else if (resultMathRandom <= 0.66) {
-        resultMathRandom = "feuille";
+        resultMathRandom = "紙";
     } else if ( resultMathRandom <= 1) {
-        resultMathRandom = "ciseaux";
+        resultMathRandom = "鋏";
     }
     return resultMathRandom;
 }
 
 console.log(computerChoice);
 
+function getHumanChoice () {
+    let humanChoice = prompt("石、紙、鋏を選んでください");
+}
