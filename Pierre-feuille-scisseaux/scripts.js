@@ -1,21 +1,3 @@
-//creer un jeu pierre feuille ciseaux
-// pour cela je dois faire un prompt pour demander a l'utilisateur de choisir entre pierre feuille ou ciseaux
-// je dois ensuite faire un random pour que l'ordinateur choisisse entre pierre feuille ou ciseaux
-// je dois ensuite comparer les deux choix et determiner qui a gagné
-// je dois ensuite afficher le resultat
-//  la partie se fait en 5 rounds
-// je dois aussi afficher le score
-// je dois a la fin des 5 rounds afficher le gagnant
-
-// variables
-
-const computerChoice = getComputerChoice();
-const humanChoice = getHumanChoice();
-
-let computerScore = 0;
-let humanScore = 0;
-
-//function
 
 function getComputerChoice () {
 let resultMathRandom = Math.random();
@@ -34,7 +16,7 @@ let humanChoice = prompt("石、紙、鋏を選んでください");
 return humanChoice;
 }
 
-function UpdateScore (resultat) {
+function updateScore (resultat) {
     if (resultat === "あなたの勝ち") {
         humanScore++;
     } else if (resultat === "あなたの負け") {
@@ -42,11 +24,12 @@ function UpdateScore (resultat) {
     }
 }
 
+let computerScore = 0;
+let humanScore = 0;
 
-
-function playRound (humanChoice, computerChoice) {
-    let a = humanChoice;
-    let b = computerChoice;
+function playRound (playerChoice, secondPlayerChoice) {
+    let a = playerChoice;
+    let b = secondPlayerChoice;
 
     if (a === b) {
         return "引き分け";
@@ -56,15 +39,25 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-playRound(humanChoice, computerChoice);
+function playGame () {
+    let round = 0;
 
-function fullGame (score) {
-    if (score === 5) {
-        if (humanScore > computerScore) {
-            return "You won the game!";
-        } else if (humanScore < computerScore) {
-            return "You lost the game!";
-        }
+    while (round < 5) {
+        const computerChoice = getComputerChoice();
+        const humanChoice = getHumanChoice();
+        let resultat = playRound(humanChoice, computerChoice);
+        updateScore(resultat);
+        round++;
+    }
+    
+    if (humanScore > computerScore) {
+        console.log("ゲーム終了！あなたの勝ちです！");
+    } else if (computerScore > humanScore) {
+        console.log("ゲーム終了！コンピュータの勝ちです！");
+    } else {
+        console.log("ゲーム終了！引き分けです！");
     }
 }
 
+playGame();
+alert("ゲーム終了！お疲れ様でした！");
