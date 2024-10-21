@@ -42,7 +42,7 @@ function playRound (playerChoice, secondPlayerChoice) {
 function playGame () {
     let round = 0;
 
-    while (round < 5) {
+    for (round = 0; round < 5; round++) {
         const computerChoice = getComputerChoice();
         const humanChoice = getHumanChoice();
         let resultat = playRound(humanChoice, computerChoice);
