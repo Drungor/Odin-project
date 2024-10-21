@@ -19,35 +19,37 @@
 
 // const computerChoice = getComputerChoice("pierre", "feuille", "ciseaux");
 
+
+
+
+// variables
+
 const computerChoice = getComputerChoice();
 const humanChoice = getHumanChoice();
 
+let computerScore = 0;
+let humanScore = 0;
 
-function playGame () {
-    let computerScore = 0;
-    let humanScore = 0;
+//function
 
+function getComputerChoice () {
+let resultMathRandom = Math.random();
+if (resultMathRandom <= 0.33) {
+    resultMathRandom = "石";
+} else if (resultMathRandom <= 0.66) {
+    resultMathRandom = "紙";
+} else if ( resultMathRandom <= 1) {
+    resultMathRandom = "鋏";
+}
+return resultMathRandom;
+}
 
-    function getComputerChoice () {
-    let resultMathRandom = Math.random();
-    if (resultMathRandom <= 0.33) {
-        resultMathRandom = "石";
-    } else if (resultMathRandom <= 0.66) {
-        resultMathRandom = "紙";
-    } else if ( resultMathRandom <= 1) {
-        resultMathRandom = "鋏";
-    }
-    return resultMathRandom;
-    }
+function getHumanChoice () {
+let humanChoice = prompt("石、紙、鋏を選んでください");
+return humanChoice;
+}
 
-    let humanChoice = getHumanChoice();
-
-    function getHumanChoice () {
-    let humanChoice = prompt("石、紙、鋏を選んでください");
-    return humanChoice;
-    }
-
-    function playRound (humanChoice, computerChoice) {
+function round (humanChoice, computerChoice) {
     let a = humanChoice;
     let b = computerChoice;
 
@@ -55,22 +57,12 @@ function playGame () {
         return "引き分け";
     } else if (a === "石" && b === "紙" || a === "紙" && b === "鋏" || a === "鋏" && b === "石") {
         return "あなたの負け";
-    } else if (a === "紙" && b === "石" || a === "鋏" && b === "紙" || a === "石" && b === "鋏") {
-        return ("あなたの勝ち");
-    } else {
-        return "不正な入力です";
-    }
-
-
-    function updateScore (result) {
-        if (result === "あなたの勝ち") {
-            humanScore++;
-        }  else if (result === "あなたの負け") {
-            computerScore++;
-        } else {
-            return "引き分け";
-        }
-        console.log(humanScore, computerScore)
+    } else { return "あなたの勝ち";
     }
 
 }
+
+
+
+
+// console.log ("あなたのスコアは" + humanScore + "です");
